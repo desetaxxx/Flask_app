@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel = "stylesheet" href = "{{url_for('static',filename ='style.css')}}">
+    </head>
+    <body>
+          
+        <h1>Таблица спортсменов </h1>
+    <table class ="table">
+      <caption class = "subtitle">Таблица athletes</caption>
+      <thead class ="thead">
+       <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Country</th>
+        <th>Sport</th>
+       </tr>
+      </thead>
+      <tbody >
+      {% for user in users %}
+        <tr>
+          <th>{{user.id}}</th>
+          <th align="left">{{user.name}}</th>
+          <th>{{user.gender}}</th>
+          <th>{{user.age}}</th>
+          <th align="left">{{user.country}}</th>
+          <th align="left">{{user.sport}}</th>
+        </tr>
+    {% endfor %}
+      </tbody>
+    </table>  
+    </body>
+</html>
